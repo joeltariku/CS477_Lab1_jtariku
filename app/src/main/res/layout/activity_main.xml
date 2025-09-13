@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/header_title"
+        android:textSize="24sp"
+        android:paddingBottom="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to my online store!"
+        app:layout_constraintBottom_toTopOf="@+id/large_sweatshirt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <LinearLayout
+        android:id="@+id/large_sweatshirt"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/header_title"
+    >
+        <TextView
+            android:id="@+id/large_sweatshirt_label"
+            android:textSize="18sp"
+            android:padding="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Large sweatshirt - $22.99"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_title"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/header_title"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/medium_sweatshirt"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium sweatshirt - $20.99"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/large_sweatshirt"
+        />
+
+    <TextView
+        android:id="@+id/small_sweatshirt"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Small sweatshirt - $18.99"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medium_sweatshirt"
+        />
+
+    <RadioGroup
+        android:id="@+id/shipping_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/small_sweatshirt"
+    >
+        <RadioButton
+            android:id="@+id/shipping_button"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Shipping"
+            />
+        <RadioButton
+            android:id="@+id/no_shipping_button"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="No Shipping"
+            />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/compute_cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compute cost"
+        app:layout_constraintTop_toBottomOf="@id/shipping_group"
+        />
+
+    <TextView
+        android:id="@+id/item_subtotal"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item Subtotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compute_cost"
+        />
+
+    <TextView
+        android:id="@+id/tax"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tax (4%)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_subtotal"
+        />
+
+    <TextView
+        android:id="@+id/shipping_cost"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shipping"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tax"
+        />
+
+    <TextView
+        android:id="@+id/total_cost"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shipping_cost"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
