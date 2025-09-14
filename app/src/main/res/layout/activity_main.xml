@@ -33,43 +33,64 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Large sweatshirt - $22.99"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header_title"
             />
+
         <EditText
+            android:id="@+id/large_sweatshirt_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/header_title"
+            android:hint="# needed"
+            android:inputType="number"
             />
     </LinearLayout>
-    <TextView
+    <LinearLayout
         android:id="@+id/medium_sweatshirt"
-        android:textSize="18sp"
-        android:padding="10sp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Medium sweatshirt - $20.99"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/large_sweatshirt"
-        />
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/large_sweatshirt"
+    >
+        <TextView
+            android:id="@+id/medium_sweatshirt_label"
+            android:textSize="18sp"
+            android:padding="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium sweatshirt - $20.99"
+            />
 
-    <TextView
+        <EditText
+            android:id="@+id/medium_sweatshirt_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="# needed"
+            android:inputType="number"
+            />
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/small_sweatshirt"
-        android:textSize="18sp"
-        android:padding="10sp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Small sweatshirt - $18.99"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medium_sweatshirt"
-        />
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/medium_sweatshirt"
+    >
+        <TextView
+            android:id="@+id/small_sweatshirt_label"
+            android:textSize="18sp"
+            android:padding="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Small sweatshirt - $18.99"
+            />
 
+        <EditText
+            android:id="@+id/small_sweatshirt_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="# needed"
+            android:inputType="number"
+            />
+    </LinearLayout>
     <RadioGroup
         android:id="@+id/shipping_group"
         android:layout_width="match_parent"
@@ -90,6 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="No Shipping"
+            android:checked="true"
             />
     </RadioGroup>
 
@@ -102,20 +124,29 @@
         />
 
     <TextView
-        android:id="@+id/item_subtotal"
+        android:id="@+id/item_subtotal_label"
         android:textSize="18sp"
         android:padding="10sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Item Subtotal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/compute_cost"
         />
 
     <TextView
-        android:id="@+id/tax"
+        android:id="@+id/item_subtotal"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="$0.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compute_cost"
+        />
+
+    <TextView
+        android:id="@+id/tax_label"
         android:textSize="18sp"
         android:padding="10sp"
         android:layout_width="wrap_content"
@@ -124,11 +155,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_subtotal_label"
+        />
+
+    <TextView
+        android:id="@+id/tax"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="$0.00"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/item_subtotal"
         />
 
     <TextView
-        android:id="@+id/shipping_cost"
+        android:id="@+id/shipping_cost_label"
         android:textSize="18sp"
         android:padding="10sp"
         android:layout_width="wrap_content"
@@ -137,11 +179,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tax"
+        app:layout_constraintTop_toBottomOf="@id/tax_label"
         />
 
     <TextView
-        android:id="@+id/total_cost"
+        android:id="@+id/shipping_cost"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="$0.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tax_label"
+        />
+
+    <TextView
+        android:id="@+id/total_cost_label"
         android:textSize="18sp"
         android:padding="10sp"
         android:layout_width="wrap_content"
@@ -150,8 +203,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/shipping_cost"
+        app:layout_constraintTop_toBottomOf="@id/shipping_cost_label"
         />
 
+    <TextView
+        android:id="@+id/total_cost"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="$0.00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shipping_cost_label"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
